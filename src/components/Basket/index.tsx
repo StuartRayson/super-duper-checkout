@@ -1,16 +1,8 @@
 import { useBasketContext } from "../../contexts/basketContext";
-import { BasketItem } from "../../mockData/getMockBasketResponse";
-
-const BasketRow: React.FC<BasketItem> = ({ sku, productDetails }) => {
-  return (
-    <div key={sku} data-testid={`product-${sku}`}>
-      {productDetails.name}
-    </div>
-  );
-};
+import { BasketRow } from "../BasketRow";
 
 export const Basket: React.FC<{}> = () => {
-  const { basketItems } = useBasketContext();
+  const { basketItems, basketTotal } = useBasketContext();
 
   return (
     <div data-testid="basket">
@@ -18,6 +10,7 @@ export const Basket: React.FC<{}> = () => {
       {basketItems.map((product) => {
         return <BasketRow key={product.sku} {...product} />;
       })}
+      Total: {basketTotal}
     </div>
   );
 };

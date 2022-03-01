@@ -9,7 +9,7 @@ import {
 export const renderBasketWithContext = (basketItems: BasketItem[] = []) => {
   const context = {
     basketItems,
-    basketTotal: "",
+    basketTotal: 0,
     removeFromBasket: jest.fn(),
     addToBasket: jest.fn(),
   };
@@ -23,8 +23,7 @@ export const renderBasketWithContext = (basketItems: BasketItem[] = []) => {
   const { removeFromBasket, addToBasket } = context;
 
   return {
-    ...screen,
-    element,
+    ...element,
     mocks: {
       removeFromBasket,
       addToBasket,
