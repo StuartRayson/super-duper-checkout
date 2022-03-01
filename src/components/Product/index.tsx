@@ -1,4 +1,4 @@
-import { ProductType } from "../../mockData/getProductListResponse";
+import { ProductType } from "../../mockData/getMockProductListResponse";
 
 export const Product: React.FC<{
   product: ProductType;

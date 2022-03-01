@@ -10,4 +10,13 @@ describe("<ProductList />", () => {
       expect(basketWrapper).toBeTruthy();
     });
   });
+
+  it("should render two items on the product page", async () => {
+    const element = render(<ProductList />);
+
+    await waitFor(() => {
+      const basketWrapper = element.queryAllByTestId("product");
+      expect(basketWrapper.length).toEqual(2);
+    });
+  });
 });

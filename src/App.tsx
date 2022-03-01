@@ -1,15 +1,20 @@
+import { Basket } from "./components/Basket";
 import { ProductList } from "./components/ProductList";
+import { BasketContextProvider } from "./contexts/basketContext";
 
 /* ToDo: 
-- create unit test for product
-- create context for basket
-- add item to context for basket to display
+- Create unit test for product
+- Create context for basket
+- Add item to context for basket to display
 */
 
 function App() {
   return (
     <div>
-      <ProductList />
+      <BasketContextProvider>
+        <ProductList />
+        <Basket />
+      </BasketContextProvider>
     </div>
   );
 }
