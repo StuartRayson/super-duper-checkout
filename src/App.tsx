@@ -3,9 +3,9 @@ import { ProductList } from "./components/ProductList";
 import { BasketContextProvider } from "./contexts/basketContext";
 
 /* ToDo: 
-- Add / Remove logic 
-- Test logic 
-- Total cart calculation
+- Additional intergration test for Add/Remove with basket Context 
+- Test for helper calculation
+- Make it looks pretty with some UI work
 */
 
 function App() {
