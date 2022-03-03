@@ -27,12 +27,7 @@ export const Product: React.FC<ProductType> = (product) => {
       borderColor="gray.300"
       overflow="hidden"
     >
-      <Image
-        boxSize="100%"
-        objectFit="cover"
-        src={productImg}
-        alt={`imageAlt`}
-      />
+      <Image boxSize="100%" objectFit="cover" src={productImg} alt={name} />
 
       {offer && (
         <Tag
