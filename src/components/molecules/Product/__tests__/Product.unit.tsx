@@ -1,6 +1,6 @@
 import { Product } from "../index";
 import { render } from "@testing-library/react";
-import { mockProductListResponse } from "../../../mockData/getMockProductListResponse";
+import { mockProductListResponse } from "../../../../mockData/getMockProductListResponse";
 
 describe("<Product />", () => {
   it("should successfully render on the page", () => {

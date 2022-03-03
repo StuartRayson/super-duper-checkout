@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import {
   productListResponse,
   ProductType,
-} from "../../mockData/getMockProductListResponse";
-import { Product } from "../Product";
+} from "../../../mockData/getMockProductListResponse";
+import { Product } from "../../molecules/Product";
 
 export const ProductList: React.FC<{}> = () => {
   const [products, setProducts] = useState<ProductType[]>([]);

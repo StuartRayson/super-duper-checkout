@@ -1,6 +1,6 @@
 import { BasketRow } from "../index";
 import { render } from "@testing-library/react";
-import { mockBasketResponse } from "../../../mockData/getMockBasketResponse";
+import { mockBasketResponse } from "../../../../mockData/getMockBasketResponse";
 
 describe("<BasketRow />", () => {
   it("should successfully render on the page", () => {

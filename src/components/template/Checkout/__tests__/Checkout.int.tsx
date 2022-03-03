@@ -2,13 +2,13 @@ import { Checkout } from "../index";
 import {
   renderWithMockContext,
   renderWithContext,
-} from "../../../../__tests__/renderWithContext";
+} from "../../../../../__tests__/renderWithContext";
 import { waitFor } from "@testing-library/react";
-import * as getMockProductListResponse from "../../../mockData/getMockProductListResponse";
+import * as getMockProductListResponse from "../../../../mockData/getMockProductListResponse";
 import {
   mockProductListResponse,
   ProductType,
-} from "../../../mockData/getMockProductListResponse";
+} from "../../../../mockData/getMockProductListResponse";
 import userEvent from "@testing-library/user-event";
 
 const productItem: ProductType = {

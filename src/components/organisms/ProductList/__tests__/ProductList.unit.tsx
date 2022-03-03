@@ -1,7 +1,7 @@
 import { ProductList } from "../index";
 import { render, waitFor } from "@testing-library/react";
-import * as getMockProductListResponse from "../../../mockData/getMockProductListResponse";
-import { renderWithMockContext } from "../../../../__tests__/renderWithContext";
+import * as getMockProductListResponse from "../../../../mockData/getMockProductListResponse";
+import { renderWithMockContext } from "../../../../../__tests__/renderWithContext";
 import userEvent from "@testing-library/user-event";
 
 describe("<ProductList />", () => {

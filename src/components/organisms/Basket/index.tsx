@@ -1,5 +1,5 @@
-import { useBasketContext } from "../../contexts/basketContext";
-import { BasketRow } from "../BasketRow";
+import { useBasketContext } from "../../../contexts/basketContext";
+import { BasketRow } from "../../molecules/BasketRow";
 
 export const Basket: React.FC<{}> = () => {
   const { basketItems, basketTotal } = useBasketContext();

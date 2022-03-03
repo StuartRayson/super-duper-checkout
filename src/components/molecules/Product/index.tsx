@@ -1,5 +1,5 @@
-import { useBasketContext } from "../../contexts/basketContext";
-import { ProductType } from "../../mockData/getMockProductListResponse";
+import { useBasketContext } from "../../../contexts/basketContext";
+import { ProductType } from "../../../mockData/getMockProductListResponse";
 
 export const Product: React.FC<ProductType> = (product) => {
   const { addToBasket } = useBasketContext();

@@ -1,6 +1,6 @@
 import { Basket } from "../index";
-import { mockBasketResponse } from "../../../mockData/getMockBasketResponse";
-import { renderWithMockContext } from "../../../../__tests__/renderWithContext";
+import { mockBasketResponse } from "../../../../mockData/getMockBasketResponse";
+import { renderWithMockContext } from "../../../../../__tests__/renderWithContext";
 import userEvent from "@testing-library/user-event";
 
 describe("<Basket />", () => {

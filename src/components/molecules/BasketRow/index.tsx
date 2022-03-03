@@ -1,7 +1,7 @@
 import { useMemo } from "react";
-import { useBasketContext } from "../../contexts/basketContext";
-import { calculatePrice } from "../../helpers/calculatePrice";
-import { BasketItem } from "../../mockData/getMockBasketResponse";
+import { useBasketContext } from "../../../contexts/basketContext";
+import { calculatePrice } from "../../../helpers/calculatePrice";
+import { BasketItem } from "../../../mockData/getMockBasketResponse";
 
 export const BasketRow: React.FC<BasketItem> = (basketItem) => {
   const { removeFromBasket } = useBasketContext();
