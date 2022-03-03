@@ -35,7 +35,13 @@ export const Product: React.FC<ProductType> = (product) => {
       />
 
       {offer && (
-        <Tag colorScheme="blue" position="absolute" top="4" right="4">
+        <Tag
+          colorScheme="blue"
+          position="absolute"
+          top="4"
+          right="4"
+          data-testid={`product-tag-${sku}`}
+        >
           {offer.type}
         </Tag>
       )}

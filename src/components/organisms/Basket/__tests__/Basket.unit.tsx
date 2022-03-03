@@ -10,6 +10,13 @@ describe("<Basket />", () => {
     expect(basketWrapper).toBeTruthy();
   });
 
+  it("should have empty state if no items are in the basket", () => {
+    const { queryAllByText } = renderWithMockContext(Basket, []);
+
+    const emptyBasket = queryAllByText("There are no items in your basket")[0];
+    expect(emptyBasket).toBeTruthy();
+  });
+
   it("should render item in basket", () => {
     const { queryAllByTestId } = renderWithMockContext(Basket, [
       mockBasketResponse[0],
