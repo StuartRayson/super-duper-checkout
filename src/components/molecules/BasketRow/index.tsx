@@ -1,5 +1,5 @@
 import { DeleteIcon } from "@chakra-ui/icons";
-import { Box, GridItem, Grid, IconButton } from "@chakra-ui/react";
+import { Box, GridItem, Grid, IconButton, Text } from "@chakra-ui/react";
 import { useMemo } from "react";
 import { useBasketContext } from "../../../contexts/basketContext";
 import { calculateDiscount } from "../../../helpers/calculateDiscount";
@@ -37,30 +37,30 @@ export const BasketRow: React.FC<BasketItem> = (basketItem) => {
     >
       <Grid templateColumns="repeat(5, 1fr)" gap={6}>
         <GridItem>
-          <Box>Qty:</Box>
+          <Text>Qty:</Text>
           {qty}
         </GridItem>
         <GridItem>
-          <Box>Name:</Box>
-          {name}{" "}
+          <Text>Name:</Text>
+          {name}
         </GridItem>
         <GridItem>
-          <Box>Unit Price:</Box>
+          <Text>Unit Price:</Text>
           {formatPrice(price)}
         </GridItem>
         <GridItem>
-          <Box>Total Price:</Box>
-          <Box data-testid={`product-price-${sku}`}>
+          <Text>Total Price:</Text>
+          <Text data-testid={`product-price-${sku}`}>
             {formatPrice(totalPrice)}
-          </Box>
+          </Text>
           {discount > 0 && (
-            <Box>
+            <Text color="red.600">
               (-
               <span data-testid={`product-discount-${sku}`}>
                 {formatPrice(discount)}
               </span>
               )
-            </Box>
+            </Text>
           )}
         </GridItem>
         <GridItem textAlign={"right"}>

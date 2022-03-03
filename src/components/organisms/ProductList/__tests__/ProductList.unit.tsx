@@ -26,7 +26,7 @@ describe("<ProductList />", () => {
     mock.mockRestore();
   });
 
-  it("should call add Item", async () => {
+  it("should call add to basket when action is clicked", async () => {
     const { getByTestId, mocks } = renderWithMockContext(ProductList);
 
     await waitFor(() => {

@@ -11,21 +11,26 @@ export const Basket: React.FC<{}> = () => {
       <Heading as="h2" size="xl">
         Basket
       </Heading>
-      {basketItems.map((product) => {
-        return <BasketRow key={product.sku} {...product} />;
-      })}
       {!basketItems.length && (
-        <Alert status="info" marginY={"4"}>
+        <Alert status="info" marginY="4" borderRadius="4">
           <AlertIcon />
-          Looks there is nothing in your Basket
+          There are no items in your basket
         </Alert>
       )}
-      <Box mt="4" textAlign="right">
-        <Box as="span" fontWeight="bold">
-          Total:
-        </Box>{" "}
-        {formatPrice(basketTotal)}
-      </Box>
+      {basketItems.length > 0 && (
+        <>
+          {basketItems.map((product) => {
+            return <BasketRow key={product.sku} {...product} />;
+          })}
+
+          <Box mt="4" textAlign="right">
+            <Box as="span" fontWeight="bold">
+              Total To Pay:
+            </Box>{" "}
+            {formatPrice(basketTotal)}
+          </Box>
+        </>
+      )}
     </Box>
   );
 };

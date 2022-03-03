@@ -65,7 +65,7 @@ export const BasketContextProvider: React.FC<{}> = ({ children }) => {
 
   /*
    * Remove item from the basket context
-   * use the sku to remove the item
+   * Uses the sku to remove the item
    */
   const removeFromBasket = useCallback((sku: string) => {
     setBasketItems((currentBasketItems) => {
@@ -80,7 +80,7 @@ export const BasketContextProvider: React.FC<{}> = ({ children }) => {
   }, []);
 
   /*
-   * useMemo to calculate Basket Total on BasketItem Change
+   * useMemo to calculate basket total on basketItem change
    */
   const basketTotal = useMemo(() => {
     let totalBasketValue = 0;

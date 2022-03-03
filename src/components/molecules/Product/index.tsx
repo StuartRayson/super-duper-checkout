@@ -8,6 +8,7 @@ import {
   Image,
   Box,
   Tag,
+  Text,
 } from "@chakra-ui/react";
 import { useBasketContext } from "../../../contexts/basketContext";
 import { formatPrice } from "../../../helpers/formatPrice";
@@ -40,12 +41,17 @@ export const Product: React.FC<ProductType> = (product) => {
       )}
 
       <Box padding="4">
-        <Stat>
+        <Stat marginBottom="4">
           <StatLabel>{name}</StatLabel>
           <StatNumber>{formatPrice(price)}</StatNumber>
           <StatHelpText>sku: {sku}</StatHelpText>
           <Divider />
-          <StatHelpText>{description}</StatHelpText>
+          <StatHelpText>
+            <Text fontSize="medium" marginY="2">
+              {description}
+            </Text>
+          </StatHelpText>
+          <Divider />
         </Stat>
 
         <Button

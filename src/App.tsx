@@ -1,14 +1,20 @@
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { Checkout } from "./components/template/Checkout";
 import { BasketContextProvider } from "./contexts/basketContext";
+import { Fonts } from "./styles/fonts";
 
-/* ToDo: 
-- Make it looks pretty with some UI work
-*/
+const theme = extendTheme({
+  fonts: {
+    heading: "Playfair Display",
+    body: "League Spartan",
+  },
+});
 
 function App() {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
+      <Fonts />
+
       <BasketContextProvider>
         <Checkout />
       </BasketContextProvider>

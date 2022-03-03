@@ -18,7 +18,7 @@ describe("<Basket />", () => {
     expect(basketWrapper).toBeTruthy();
   });
 
-  it("should call remove Item", () => {
+  it("should call removeFromBasket when action is clicked", () => {
     const { getByTestId, mocks } = renderWithMockContext(Basket, [
       mockBasketResponse[0],
     ]);
