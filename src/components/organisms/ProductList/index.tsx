@@ -26,8 +26,8 @@ export const ProductList: React.FC<{}> = () => {
     <HStack data-testid="product-list">
       {products.length &&
         products.map((product) => (
-          <Box maxWidth={`50%`} padding={`4`}>
-            <Product key={product.sku} {...product} />
+          <Box key={product.sku} maxWidth={`50%`} padding={`4`}>
+            <Product {...product} />
           </Box>
         ))}
     </HStack>

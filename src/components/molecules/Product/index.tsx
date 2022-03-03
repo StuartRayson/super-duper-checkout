@@ -10,6 +10,7 @@ import {
   Tag,
 } from "@chakra-ui/react";
 import { useBasketContext } from "../../../contexts/basketContext";
+import { formatPrice } from "../../../helpers/formatPrice";
 import { ProductType } from "../../../mockData/getMockProductListResponse";
 
 export const Product: React.FC<ProductType> = (product) => {
@@ -41,7 +42,7 @@ export const Product: React.FC<ProductType> = (product) => {
       <Box padding="4">
         <Stat>
           <StatLabel>{name}</StatLabel>
-          <StatNumber>{price}</StatNumber>
+          <StatNumber>{formatPrice(price)}</StatNumber>
           <StatHelpText>sku: {sku}</StatHelpText>
           <Divider />
           <StatHelpText>{description}</StatHelpText>

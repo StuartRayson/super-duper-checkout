@@ -13,11 +13,6 @@ export const mockBasketResponse: Array<BasketItem> = [
       name: "Face Mask",
       description: "Stops you accidentally sneezing on people",
       price: 2.5,
-      currenyCode: {
-        prefix: "£",
-        decimal: 2,
-        suffix: null,
-      },
       offer: {
         type: "multiBuy",
         discount: 1,
@@ -33,11 +28,6 @@ export const mockBasketResponse: Array<BasketItem> = [
       name: "Toilet Paper",
       description: "Luxurious extra dense toilet paper (50 ply)",
       price: 0.65,
-      currenyCode: {
-        prefix: "£",
-        decimal: 2,
-        suffix: null,
-      },
       offer: {
         type: "multiBuy",
         discount: 0.65,

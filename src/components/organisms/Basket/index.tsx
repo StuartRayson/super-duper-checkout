@@ -1,12 +1,6 @@
-import {
-  Alert,
-  AlertIcon,
-  Box,
-  Grid,
-  GridItem,
-  Heading,
-} from "@chakra-ui/react";
+import { Alert, AlertIcon, Box, Heading } from "@chakra-ui/react";
 import { useBasketContext } from "../../../contexts/basketContext";
+import { formatPrice } from "../../../helpers/formatPrice";
 import { BasketRow } from "../../molecules/BasketRow";
 
 export const Basket: React.FC<{}> = () => {
@@ -30,7 +24,7 @@ export const Basket: React.FC<{}> = () => {
         <Box as="span" fontWeight="bold">
           Total:
         </Box>{" "}
-        {basketTotal}
+        {formatPrice(basketTotal)}
       </Box>
     </Box>
   );

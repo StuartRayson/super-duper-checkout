@@ -2,19 +2,27 @@ import { DeleteIcon } from "@chakra-ui/icons";
 import { Box, GridItem, Grid, IconButton } from "@chakra-ui/react";
 import { useMemo } from "react";
 import { useBasketContext } from "../../../contexts/basketContext";
+import { calculateDiscount } from "../../../helpers/calculateDiscount";
 import { calculatePrice } from "../../../helpers/calculatePrice";
+import { formatPrice } from "../../../helpers/formatPrice";
 import { BasketItem } from "../../../mockData/getMockBasketResponse";
 
 export const BasketRow: React.FC<BasketItem> = (basketItem) => {
   const { removeFromBasket } = useBasketContext();
-  const { qty, sku, productDetails } = basketItem;
+  const {
+    qty,
+    sku,
+    productDetails: { name, price },
+  } = basketItem;
 
-  const price = useMemo(() => {
-    return calculatePrice(basketItem);
+  const totalPrice = useMemo(() => {
+    return calculatePrice(basketItem, {
+      withOfferPriceApplied: false,
+    });
   }, [qty]);
 
   const discount = useMemo(() => {
-    return calculatePrice(basketItem);
+    return calculateDiscount(basketItem);
   }, [qty]);
 
   return (
@@ -32,16 +40,32 @@ export const BasketRow: React.FC<BasketItem> = (basketItem) => {
           <Box>Qty:</Box>
           {qty}
         </GridItem>
-        <GridItem colSpan={2}>
+        <GridItem>
           <Box>Name:</Box>
-          {productDetails.name}{" "}
+          {name}{" "}
         </GridItem>
         <GridItem>
-          <Box>Price:</Box>
-          <Box data-testid={`product-price`}>{price}</Box>
+          <Box>Unit Price:</Box>
+          {formatPrice(price)}
+        </GridItem>
+        <GridItem>
+          <Box>Total Price:</Box>
+          <Box data-testid={`product-price-${sku}`}>
+            {formatPrice(totalPrice)}
+          </Box>
+          {discount > 0 && (
+            <Box>
+              (-
+              <span data-testid={`product-discount-${sku}`}>
+                {formatPrice(discount)}
+              </span>
+              )
+            </Box>
+          )}
         </GridItem>
         <GridItem textAlign={"right"}>
           <IconButton
+            title={`Remove ${name} from basket`}
             data-testid={`remove-basket-row-${sku}`}
             aria-label="remove from basket"
             onClick={() => removeFromBasket(sku)}

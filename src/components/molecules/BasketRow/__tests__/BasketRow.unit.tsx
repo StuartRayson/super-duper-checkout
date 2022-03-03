@@ -10,27 +10,27 @@ describe("<BasketRow />", () => {
     expect(basketRow).toBeTruthy();
   });
 
-  it("should render offerPrice", () => {
+  it("should render total price", () => {
+    const { sku } = mockBasketResponse[0];
+
     const item = {
       ...mockBasketResponse[0],
       qty: 2,
     };
     const element = render(<BasketRow {...item} />);
-    const price = element.queryAllByTestId(`product-price`)[0];
-    expect(price.textContent).toEqual("4");
+    const price = element.queryAllByTestId(`product-price-${sku}`)[0];
+    expect(price.textContent).toEqual("£5.00");
   });
 
-  it("should render standard price", () => {
+  it("should render discount price", () => {
+    const { sku } = mockBasketResponse[0];
+
     const item = {
       ...mockBasketResponse[0],
-      productDetails: {
-        ...mockBasketResponse[0].productDetails,
-        offer: null,
-      },
       qty: 2,
     };
     const element = render(<BasketRow {...item} />);
-    const price = element.queryAllByTestId(`product-price`)[0];
-    expect(price.textContent).toEqual("5");
+    const price = element.queryAllByTestId(`product-discount-${sku}`)[0];
+    expect(price.textContent).toEqual("£1.00");
   });
 });

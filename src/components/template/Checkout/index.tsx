@@ -5,7 +5,7 @@ import { ProductList } from "../../organisms/ProductList";
 export function Checkout() {
   return (
     <Center>
-      <Box maxWidth={`600px`}>
+      <Box maxWidth={`700px`}>
         <Basket />
         <Divider />
         <Box>

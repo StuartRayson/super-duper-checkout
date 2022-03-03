@@ -18,11 +18,6 @@ const productItem: ProductType = {
     name: "Test Product",
     description: "Test",
     price: 1,
-    currenyCode: {
-      prefix: "£",
-      decimal: 2,
-      suffix: null,
-    },
     offer: null,
   },
 };
