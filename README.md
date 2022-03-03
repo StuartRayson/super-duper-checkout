@@ -1,6 +1,7 @@
 # super-duper-checkout
 
-Built with the vite starter, not used it before so thought
+Built with the vite starter
+(_not used it before so thought why not_)
 
 ### Local dev
 
@@ -10,6 +11,6 @@ Built with the vite starter, not used it before so thought
 
 `yarn test`
 
-###Preview url
+### Preview url
 
 https://vigorous-kirch-d6b15b.netlify.app/
