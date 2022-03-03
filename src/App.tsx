@@ -1,5 +1,4 @@
-import { Basket } from "./components/Basket";
-import { ProductList } from "./components/ProductList";
+import { Checkout } from "./components/Checkout";
 import { BasketContextProvider } from "./contexts/basketContext";
 
 /* ToDo: 
@@ -10,12 +9,9 @@ import { BasketContextProvider } from "./contexts/basketContext";
 
 function App() {
   return (
-    <div>
-      <BasketContextProvider>
-        <ProductList />
-        <Basket />
-      </BasketContextProvider>
-    </div>
+    <BasketContextProvider>
+      <Checkout />
+    </BasketContextProvider>
   );
 }
 

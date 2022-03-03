@@ -6,8 +6,8 @@ describe("<BasketRow />", () => {
   it("should successfully render on the page", () => {
     const { sku } = mockBasketResponse[0];
     const element = render(<BasketRow {...mockBasketResponse[0]} />);
-    const basketWrapper = element.queryAllByTestId(`product-${sku}`)[0];
-    expect(basketWrapper).toBeTruthy();
+    const basketRow = element.queryAllByTestId(`basket-row-${sku}`)[0];
+    expect(basketRow).toBeTruthy();
   });
 
   it("should render offerPrice", () => {
@@ -20,7 +20,7 @@ describe("<BasketRow />", () => {
     expect(price.textContent).toEqual("4");
   });
 
-  it("should render standard Price", () => {
+  it("should render standard price", () => {
     const item = {
       ...mockBasketResponse[0],
       productDetails: {

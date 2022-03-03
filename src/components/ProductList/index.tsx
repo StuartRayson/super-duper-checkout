@@ -24,9 +24,7 @@ export const ProductList: React.FC<{}> = () => {
   return (
     <div data-testid="product-list">
       {products.length &&
-        products.map((product) => (
-          <Product key={product.sku} product={product} />
-        ))}
+        products.map((product) => <Product key={product.sku} {...product} />)}
     </div>
   );
 };

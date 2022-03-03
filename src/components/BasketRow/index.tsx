@@ -12,10 +12,16 @@ export const BasketRow: React.FC<BasketItem> = (basketItem) => {
   }, [qty]);
 
   return (
-    <div key={sku} data-testid={`product-${sku}`}>
+    <div key={sku} data-testid={`basket-row-${sku}`}>
       qty: {qty} - {productDetails.name} - price:{" "}
       <div data-testid={`product-price`}>{price}</div>
-      <button onClick={() => removeFromBasket(sku)}> remove </button>
+      <button
+        data-testid={`remove-basket-row-${sku}`}
+        onClick={() => removeFromBasket(sku)}
+      >
+        {" "}
+        remove{" "}
+      </button>
     </div>
   );
 };
