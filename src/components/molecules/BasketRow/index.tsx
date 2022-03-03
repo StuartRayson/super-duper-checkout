@@ -12,7 +12,7 @@ export const BasketRow: React.FC<BasketItem> = (basketItem) => {
   const {
     qty,
     sku,
-    productDetails: { name, price },
+    productDetails: { name, price, offer },
   } = basketItem;
 
   const totalPrice = useMemo(() => {
@@ -35,27 +35,27 @@ export const BasketRow: React.FC<BasketItem> = (basketItem) => {
       key={sku}
       data-testid={`basket-row-${sku}`}
     >
-      <Grid templateColumns="repeat(5, 1fr)" gap={6}>
+      <Grid templateColumns="repeat(10, 1fr)" gap={6}>
         <GridItem>
           <Text>Qty:</Text>
           {qty}
         </GridItem>
-        <GridItem>
+        <GridItem colSpan={2}>
           <Text>Name:</Text>
           {name}
         </GridItem>
-        <GridItem>
+        <GridItem colSpan={2}>
           <Text>Unit Price:</Text>
           {formatPrice(price)}
         </GridItem>
-        <GridItem>
+        <GridItem colSpan={4}>
           <Text>Total Price:</Text>
           <Text data-testid={`product-price-${sku}`}>
             {formatPrice(totalPrice)}
           </Text>
-          {discount > 0 && (
+          {discount > 0 && offer && (
             <Text color="red.600">
-              (-
+              (Savings: -
               <span data-testid={`product-discount-${sku}`}>
                 {formatPrice(discount)}
               </span>

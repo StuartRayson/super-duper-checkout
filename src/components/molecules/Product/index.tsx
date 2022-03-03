@@ -37,7 +37,7 @@ export const Product: React.FC<ProductType> = (product) => {
           right="4"
           data-testid={`product-tag-${sku}`}
         >
-          {offer.type}
+          Buy {offer.limit} and save {formatPrice(offer.discount)}
         </Tag>
       )}
 
