@@ -1,3 +1,4 @@
+import { Box, HStack } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import {
   productListResponse,
@@ -22,9 +23,13 @@ export const ProductList: React.FC<{}> = () => {
   }, []);
 
   return (
-    <div data-testid="product-list">
+    <HStack data-testid="product-list">
       {products.length &&
-        products.map((product) => <Product key={product.sku} {...product} />)}
-    </div>
+        products.map((product) => (
+          <Box maxWidth={`50%`} padding={`4`}>
+            <Product key={product.sku} {...product} />
+          </Box>
+        ))}
+    </HStack>
   );
 };

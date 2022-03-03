@@ -1,3 +1,4 @@
+import { ChakraProvider } from "@chakra-ui/react";
 import { Checkout } from "./components/template/Checkout";
 import { BasketContextProvider } from "./contexts/basketContext";
 
@@ -7,9 +8,11 @@ import { BasketContextProvider } from "./contexts/basketContext";
 
 function App() {
   return (
-    <BasketContextProvider>
-      <Checkout />
-    </BasketContextProvider>
+    <ChakraProvider>
+      <BasketContextProvider>
+        <Checkout />
+      </BasketContextProvider>
+    </ChakraProvider>
   );
 }
 

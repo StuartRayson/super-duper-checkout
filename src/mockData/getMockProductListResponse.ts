@@ -28,7 +28,7 @@ export const mockProductListResponse = (
       {
         sku: "0001",
         productDetails: {
-          productImg: "url",
+          productImg: "./face-mask.webp",
           name: "Face Mask",
           description: "Stops you accidentally sneezing on people",
           price: 2.5,
@@ -47,7 +47,7 @@ export const mockProductListResponse = (
       {
         sku: "0002",
         productDetails: {
-          productImg: "url",
+          productImg: "./toilet-roll.webp",
           name: "Toilet Paper",
           description: "Luxurious extra dense toilet paper (50 ply)",
           price: 0.65,
