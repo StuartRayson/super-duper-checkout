@@ -14,3 +14,6 @@ Built with the vite starter
 ### Preview url
 
 https://vigorous-kirch-d6b15b.netlify.app/
+
+![alt text](https://github.com/StuartRayson/super-duper-checkout/blob/main/Screenshot%202022-03-03%20at%2016.41.53.png?raw=true)
+
